@@ -16,7 +16,7 @@ local function switch_branch()
     if choice > 0 then
         local branch_name = vim.split(branches, '\n')[choice]:gsub("%*", ""):gsub("%s+", "")
         utils.checkout_branch(branch_name)
-        vim.notify("Switched to branch: " .. branch_name, vim.log.levels.INFO)
+        vim.notify("Switched to branch: " .. branch_name .. "\n", vim.log.levels.INFO)
         vim.cmd("source ~/.config/nvim/init.lua")  -- Reload Neovim configuration
         vim.notify("Neovim reloaded!", vim.log.levels.INFO)
     end
