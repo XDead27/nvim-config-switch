@@ -1,4 +1,4 @@
-# nvim-config-switcher
+# nvim-config-switch
 
 A simple Neovim plugin to switch between branches of your configuration repository and reload Neovim.
 
