@@ -1,3 +1,4 @@
+local M = {}
 local utils = require('nvim-config-switch.utils')
 
 -- Show the current branch
@@ -21,6 +22,11 @@ local function switch_branch()
     end
 end
 
+M.show_current_branch = show_current_branch
+M.switch_branch = switch_branch
+
 -- Expose commands for branch display and switching
-vim.api.nvim_create_user_command('ShowBranch', show_current_branch, {})
-vim.api.nvim_create_user_command('SwitchBranch', switch_branch, {})
+vim.api.nvim_create_user_command('ShowBranch', M.show_current_branch, {})
+vim.api.nvim_create_user_command('SwitchBranch', M.switch_branch, {})
+
+return M
